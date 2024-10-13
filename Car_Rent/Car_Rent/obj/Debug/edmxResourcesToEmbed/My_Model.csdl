@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Car_RentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="carname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="place" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nationalnumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Car_RentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cars" EntityType="Self.car" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Car_RentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="car">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="carname" Type="nvarchar" MaxLength="100" />
+    <Property Name="price" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="20" />
+    <Property Name="place" Type="nvarchar" MaxLength="100" />
+    <Property Name="nationalnumber" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="Car_RentModelStoreContainer">
+    <EntitySet Name="car" EntityType="Self.car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
